@@ -11,7 +11,7 @@
       "cost": 1,
       "card_type": "monster",
       "rarity": "common",
-      "class": "@ClassSteward",
+      "class": "@ClassNetherworld",
       "targets_room": true,
       "effects": [
         {
