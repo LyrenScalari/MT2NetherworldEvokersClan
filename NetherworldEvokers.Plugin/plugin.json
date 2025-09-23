@@ -22,7 +22,7 @@
         "silhouette": "@StewardSilhouette"
       },
       "class_select_character_displays": [
-        ""
+        "@AlbertClassDisplayCharacterArt"
       ],
       "card_style": "lazarus_league",
       "ui_color": {
@@ -52,7 +52,31 @@
         }
       ],
       "champions": [
-
+        {
+          "id": "AlbertStewardChampion",
+          "card_data": "@Albert",
+          "starter_card": "@SpawnKitsune",
+          "upgrade_tree": [
+            [
+              "@AlbertXReductionBuffer1",
+              "@AlbertXReductionBuffer2",
+              "@AlbertXReductionBuffer3"
+            ],
+            [
+              "@AlbertStewardBuff1",
+              "@AlbertStewardBuff2",
+              "@AlbertStewardBuff3"
+            ],
+            [
+              "@AlbertEmberBuff1",
+              "@AlbertEmberBuff2",
+              "@AlbertEmberBuff3"
+            ]
+          ],
+          "icon": "@ClanIcon",
+          "locked_icon": "@ClanLockedIcon",
+          "portrait": "@Portrait"
+        }
       ]
     }
   ],
