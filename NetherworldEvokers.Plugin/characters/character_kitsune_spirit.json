@@ -1,0 +1,111 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+  "cards": [
+    {
+      "id": "SpawnKitsune",
+      "names": {
+        "english": "Kitsune Spirit",
+        "chinese": "模组锻造者"
+      },
+      "card_art": "@Kitsune",
+      "cost": 1,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@ClassSteward",
+      "targets_room": true,
+      "effects": [
+        {
+          "id": "@SpawnKitsune"
+        }
+      ],
+      "lore_tooltips": [
+        {
+          "english": "The most basic of netherworld spirits, its gnashing fangs burn the victims soul.",
+          "chinese": "锻造模组来治愈薪火，一次一件神器。"
+        }
+      ],
+      "pools": [
+        "UnitsAllBanner"
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "Kitsune",
+      "size": 1,
+      "attack_damage": 15,
+      "health": 10,
+      "names": {
+        "english": "Kitsune Spirit",
+        "chinese": "模组锻造者"
+      },
+      "character_art": "4a67bba634a51d54f80fcde4a955dcbc",
+      "subtypes": [
+        "SubtypesData_Witch_eadb3cce-94b3-42ed-9385-c1d20172e861"
+
+      ],
+      "triggers": [
+        {
+          "id": "@KitsuneTrigger"
+        }
+      ],
+    
+    "starting_status_effects": [{
+                "status": "captured_soul",
+                "count": 3
+            },
+            {
+                "status": "multistrike",
+                "count": 1
+            }
+        ]
+    }
+  ],
+  "character_triggers": [
+    {
+      "id": "KitsuneTrigger",
+      "descriptions": {
+        "english": "Apply [effect0.power] Hex to the frontmost enemy unit",
+        "chinese": "恢复 [effect0.power] 点薪火生命值。"
+      },
+      "trigger": "pre_combat",
+      "effects": [
+        {
+          "id": "@CursedBite"
+        }
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "SpawnKitsune",
+      "name": "CursedBite",
+      "target_mode": "room",
+      "param_character": "@Kitsune"
+    },
+    {
+      "id": "CursedBite",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "front_in_room",
+      "target_team": "monsters",
+      "param_int": 3
+    }
+  ],
+  "sprites": [
+    {
+      "id": "Kitsune",
+      "path": "textures/Kitsune.png"
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "Kitsune",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@Kitsune"
+        }
+      }
+    }
+  ]
+}
