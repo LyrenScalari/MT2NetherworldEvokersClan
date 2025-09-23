@@ -42,8 +42,7 @@ namespace NetherworldEvokers.Plugin
                     // Be sure to update the project configuration if you include more folders
                     //   the project only copies json files in the json folder and not in subdirectories.
                     c.AddMergedJsonFile(
-                        "json/plugin.json",
-                        "json/global.json"
+                        "characters.json"
                     );
                 }
             );
