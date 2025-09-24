@@ -39,7 +39,7 @@
         "english": "Kitsune Spirit",
         "chinese": "模组锻造者"
       },
-      "character_art": "Kitsune",
+      "character_art": "@Kitsune",
       "subtypes": [
         "SubtypesData_Fae"
 
@@ -68,7 +68,7 @@
         "english": "Apply [effect0.status0.power] [Conductor.Plugin_hex] to the frontmost enemy unit",
         "chinese": "恢复 [effect0.status0.power] 点薪火生命值。"
       },
-      "trigger": "pre_combat",
+      "trigger": "on_turn_begin",
       "effects": [
         {
           "id": "@CursedBite"
@@ -89,7 +89,10 @@
       "target_mode": "front_in_room",
       "target_team": "monsters",
       "param_status_effects": [{
-        "status": "@hex",
+        "status": {
+          "id": "@hex",
+          "mod_reference": "Conductor"
+        },
         "count": 3
       }]
     }
