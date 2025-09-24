@@ -11,7 +11,7 @@
       "cost": 1,
       "card_type": "monster",
       "rarity": "common",
-      "class": "@ClassClanless",
+      "class": "ClassLunaCoven",
       "targets_room": true,
       "effects": [
         {
@@ -39,9 +39,9 @@
         "english": "Kitsune Spirit",
         "chinese": "模组锻造者"
       },
-      "character_art": "4a67bba634a51d54f80fcde4a955dcbc",
+      "character_art": "Kitsune",
       "subtypes": [
-        "SubtypesData_Witch_eadb3cce-94b3-42ed-9385-c1d20172e861"
+        "SubtypesData_Fae"
 
       ],
       "triggers": [
@@ -65,8 +65,8 @@
     {
       "id": "KitsuneTrigger",
       "descriptions": {
-        "english": "Apply [effect0.power] Hex to the frontmost enemy unit",
-        "chinese": "恢复 [effect0.power] 点薪火生命值。"
+        "english": "Apply [effect0.status0.power] [Conductor.Plugin_hex] to the frontmost enemy unit",
+        "chinese": "恢复 [effect0.status0.power] 点薪火生命值。"
       },
       "trigger": "pre_combat",
       "effects": [
@@ -87,8 +87,11 @@
       "id": "CursedBite",
       "name": "CardEffectAddStatusEffect",
       "target_mode": "front_in_room",
-      "target_team": "",
-      "param_int": 3
+      "target_team": "monsters",
+      "param_status_effects": [{
+        "status": "@hex",
+        "count": 3
+      }]
     }
   ],
   "sprites": [
