@@ -1,3 +1,25 @@
 {
-
+"subtypes": [
+    {
+      "id": "Sub_Spirit",
+      "names": {
+        "english": "Spirit",
+        "chinese": "酸味"
+      }
+    },
+    {
+      "id": "Sub_Shifter",
+      "names": {
+        "english": "Shifter",
+        "chinese": "辣味"
+      }
+    },
+    {
+      "id": "Sub_Oni",
+      "names": {
+        "english": "Oni",
+        "chinese": "薄荷味"
+      }
+    }
+  ]
 }

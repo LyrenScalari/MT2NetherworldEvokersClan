@@ -1,0 +1,52 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "status_effects": [
+    {
+      "id": "construct",
+      "class_name": "@StatusEffectAetherialState",
+      "names": {
+        "english": "Aetherial",
+        "chinese": "构造体"
+      },
+      "stackable_names": {
+        "english": "<nobr>Aetherial {0}</nobr>",
+        "chinese": "<nobr>构造体 {0}</nobr>"
+      },
+      "card_tooltips": {
+        "english": "After combat, loses 1 Soul then if this unit has no Souls it is Consumed.",
+        "chinese": "回合结束时，每有一层构造体，获得 +[codeint0][attack]和[health]。<br>层数会跨回合保留，但不会死后保留。"
+      },
+      "character_tooltips": {
+        "english": "After combat, loses 1 Soul then if this unit has no Souls it is Consumed.",
+        "chinese": "回合结束时，获得 +[codeint0][attack]和[health]。<br>层数会跨回合保留，但不会死后保留。"
+      },
+      "replacement_texts": {
+        "english": "<b>Construct</b>",
+        "chinese": "<b>构造体</b>"
+      },
+      "notifications": {
+        "english": "Constructed",
+        "chinese": "构造完成"
+      },
+      "display_category": "persistent",
+      "trigger_stage": "on_post_room_combat",
+      "is_stackable": false,
+      "is_propagatable": false,
+      "exclude_hero_propagation": false,
+      "param_int": 1,
+      "icon": "@aetherial"
+    }
+  ],
+  "sprites": [
+    {
+      "id": "aetherial",
+      "path": "textures/aetherial_white.png"
+    }
+  ],
+  "atlas_icons": [
+    {
+      "id": "aetherial",
+      "path": "textures/aetherial_black.png"
+    }
+  ]
+}

@@ -41,8 +41,7 @@
       },
       "character_art": "@Kitsune",
       "subtypes": [
-        "SubtypesData_Fae"
-
+        "@Sub_Spirit"
       ],
       "triggers": [
         {
@@ -50,9 +49,14 @@
         }
       ],
     
-    "starting_status_effects": [{
+    "starting_status_effects": [
+            {
                 "status": "captured_soul",
                 "count": 3
+            },
+            {
+                "status": "@aetherial",
+                "count": 1
             },
             {
                 "status": "multistrike",
@@ -65,7 +69,7 @@
     {
       "id": "KitsuneTrigger",
       "descriptions": {
-        "english": "Apply [effect0.status0.power] [Conductor.Plugin_hex] to the frontmost enemy unit",
+        "english": "Apply [effect0.status0.power] [Conductor.Plugin_hex] to the frontmost enemy unit.",
         "chinese": "恢复 [effect0.status0.power] 点薪火生命值。"
       },
       "trigger": "on_turn_begin",
