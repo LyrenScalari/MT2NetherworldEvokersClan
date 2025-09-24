@@ -79,7 +79,7 @@
   "effects": [
     {
       "id": "SpawnKitsune",
-      "name": "CursedBite",
+      "name": "CardEffectSpawnMonster",
       "target_mode": "room",
       "param_character": "@Kitsune"
     },
