@@ -1,0 +1,155 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+  "cards": [
+    {
+      "id": "SpawnOutcast",
+      "names": {
+        "english": "Outcast Spirit",
+        "chinese": "模组锻造者"
+      },
+      "card_art": "@Outcast_Card",
+      "cost": 1,
+      "card_type": "monster",
+      "rarity": "common",
+      "class": "@ClassEvoker",
+      "targets_room": true,
+      "effects": [
+        {
+          "id": "@SpawnOutcast"
+        }
+      ],
+      "pools": [
+        "UnitsAllBanner"
+      ],
+      "lore_tooltips": [
+        {
+          "english": "Like many of the Veil's stalwart gaurdians, they are just another curse bearer their curse drives others mad beneath the full moons light.",
+          "chinese": ""
+        }
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "Outcast",
+      "size": 3,
+      "attack_damage": 5,
+      "health": 20,
+      "names": {
+        "english": "Moonblighted Outcast",
+        "chinese": ""
+      },
+      "character_art": "@OutcastChar_Art",
+      "subtypes": [
+        "@Sub_Shifter",
+        "SubtypesData_BannerUnit"
+      ],
+      "triggers": [
+        {
+          "id": "@OutcastTrigger"
+        },
+        {
+          "id": "@Summon"
+        }
+      ],
+    
+    "starting_status_effects": [
+            {
+                "status": "multistrike",
+                "count": 1
+            }
+        ]
+    }
+  ],
+  "character_triggers": [
+    {
+      "id": "OutcastTrigger",
+      "descriptions": {
+        "english": "Apply <b>Lunacy</b>  [effect0.status0.power] to friendly <b>Shifters</b> .",
+        "chinese": "恢复 [effect0.status0.power] 点薪火生命值。"
+      },
+      "trigger": {"id":"@Accursed","mod_reference": "Conductor"},
+      "effects": [
+        {
+          "id": "@RagingHowl"
+        }
+      ]
+    },
+    {
+      "id": "Summon",
+      "descriptions": {
+        "english": "Add a <b>Feral Rage</b> to your Draw pile.",
+        "chinese": "恢复 [effect0.status0.power] 点薪火生命值。"
+      },
+      "trigger": "on_spawn",
+      "effects": [
+        {
+          "id": "@SummonCard"
+        }
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "id": "SpawnOutcast",
+      "name": "CardEffectSpawnMonster",
+      "target_mode": "room",
+      "param_character": "@Outcast"
+    },
+   {
+      "id": "SummonCard",
+      "name": "CardEffectAddBattleCard",
+      "param_card": "@FeralRage",
+      "param_int": 7,
+      "param_int_2": 1,
+      "param_card_pool" : "@FeralRagePool"
+    },
+    {
+      "id": "RagingHowl",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "room",
+      "target_team": "monsters",
+      "target_subtype": "@Sub_Shifter",
+      "param_status_effects": [{
+        "status": {
+          "id": "@lunacy"
+        },
+        "count": 2
+      }]
+    }
+  ],
+"card_pools": [
+    {
+        "id": "FeralRagePool",
+        "cards": [
+            "@FeralRage"
+        ]
+    }],
+    "sprites": [{
+        "id": "Outcast",
+        "path": "textures/StewardAmalgamCardArt.png"
+    }, {
+        "id": "OutcastCharacterArt",
+        "path": "textures/StewardAmalgam.png"
+    }],
+  "game_objects": [
+    {
+      "id": "Outcast_Card",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@Outcast"
+        }
+      }
+    },
+    {
+      "id": "OutcastChar_Art",
+      "type": "character_art",
+      "extensions": {
+        "character_art": {
+          "sprite": "@OutcastCharacterArt"
+        }
+      }
+    }
+  ]
+}

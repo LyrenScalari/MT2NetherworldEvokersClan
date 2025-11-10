@@ -21,5 +21,192 @@
         "chinese": "薄荷味"
       }
     }
+  ],
+   "classes": [
+    {
+      "id": "ClassEvoker",
+      "titles": {
+        "english": "Netherworld Evokers",
+        "chinese": "乘务员公会"
+      },
+      "descriptions": {
+        "english": "Lead the gaurdians of the veil into the fray.",
+        "chinese": "指挥忠诚的乘务员保护火车，即使他们变得更加疯狂。"
+      },
+      "subclass_descriptions": {
+        "english": "Lead the gaurdians of the veil into the fray.",
+        "chinese": "指挥忠诚的乘务员保护火车，即使他们变得更加疯狂。"
+      },
+      "icons": {
+        "small": "@EvokerIconSmall",
+        "medium": "@EvokerIconRegular",
+        "large": "@EvokerIconLarge",
+        "silhouette": "@EvokerSilhouette"
+      },
+      "class_select_character_displays": [
+        "@AlbertClassDisplayCharacterArt"
+      ],
+      "card_style": "lunacoven",
+      "ui_color": {
+        "r": 0.5,
+        "g": 0.5,
+        "b": 0.5
+      },
+      "ui_color_dark": {
+        "r": 0.4,
+        "g": 0.4,
+        "b": 0.4
+      },
+      "ui_gradient": [
+        {
+          "time": 0.0,
+          "color": {
+            "r": 1.0
+          }
+        },
+        {
+          "time": 1.0,
+          "color": {
+            "r": 0.5,
+            "g": 0.5,
+            "b": 0.5
+          }
+        }
+      ],
+      "champions": [
+        {
+          "id": "SilverEvokerChampion",
+          "card_data": "@Silver",
+          "starter_card": "@SpiritButterfly",
+          "upgrade_tree": [
+            [
+              "@upg_Psychopomp1",
+              "@upg_Psychopomp2",
+              "@upg_Psychopomp3"
+            ],
+            [
+              "@upg_VeilWatcher1",
+              "@upg_VeilWatcher2",
+              "@upg_VeilWatcher3"
+            ]
+          ],
+          "icon": "@ClanIcon",
+          "locked_icon": "@ClanLockedIcon",
+          "portrait": "@Portrait"
+        }
+      ]
+    }
+  ],
+  "map_nodes": [
+    {
+      "id": "RewardNodeUnitPackEvoker",
+      "type": "reward",
+      "map_icon": "@EvokerIconSmall",
+      "minimap_icon": "@EvokerIconSmall",
+      "prefab": "@EvokerMapIcon",
+      "titles": {
+        "english": "Evoker Banner",
+        "chinese": "乘务员战旗"
+      },
+      "descriptions": {
+        "english": "Gain a Netherworld Evokers Unit",
+        "chinese": "获得一个乘务员单位。"
+      },
+      "pools": [
+        "RandomChosenMainClassUnit",
+        "RandomChosenSubClassUnit"
+      ],
+      "is_banner_node": true,
+      "extensions": [
+        {
+          "reward": {
+            "class": "@ClassEvoker",
+            "rewards": [
+              {
+                "id": "@EvokerBannerReward"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "card_pools": [
+    {
+      "id": "EvokerBannerCardPool",
+      "cards": [
+        "@SpawnOutcast"
+      ]
+    }
+  ],
+  "rewards": [
+    {
+      "id": "EvokerBannerReward",
+      "type": "draft",
+      "costs": [
+        100
+      ],
+      "extensions": [
+        {
+          "draft": {
+            "draft_pool": "@EvokerBannerCardPool",
+            "class_type": "main|subclass|nonclass",
+            "draft_options_count": 2,
+            "rarity_floor": "uncommon",
+            "ignore_relic_rarity_override": true,
+            "is_service_merchant_reward": true
+          }
+        }
+      ]
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "EvokerMapIcon",
+      "type": "map_node_icon",
+      "extensions": {
+        "map_node_icon": {
+          "disabled_sprite": "@EvokerBanner",
+          "enabled_sprite": "@EvokerBanner",
+          "frozen_sprite": "@EvokerBanner",
+          "visited_sprite_disabled": "@EvokerBanner",
+          "visited_sprite_enabled": "@EvokerBanner"
+        }
+      }
+    }
+  ],
+   "sprites": [
+    {
+      "id": "EvokerBanner",
+      "path": "textures/StewardBanner.png"
+    },
+    {
+      "id": "EvokerIconSmall",
+      "path": "textures/EvokerIconSmall.png"
+    },
+    {
+      "id": "EvokerIconRegular",
+      "path": "textures/EvokerIconRegular.png"
+    },
+    {
+      "id": "EvokerIconLarge",
+      "path": "textures/EvokerIconLarge.png"
+    },
+    {
+      "id": "EvokerSilhouette",
+      "path": "textures/EvokerIconSilhouette.png"
+    },
+    {
+      "id": "ClanIcon",
+      "path": "textures/StewardClanIcon.png"
+    },
+    {
+      "id": "ClanLockedIcon",
+      "path": "textures/StewardClanLockedIcon.png"
+    },
+    {
+      "id": "Portrait",
+      "path": "textures/StewardPortrait.png"
+    }
   ]
 }

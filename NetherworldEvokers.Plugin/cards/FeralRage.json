@@ -1,0 +1,52 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
+    "cards": [{
+        "id": "FeralRage",
+        "names": {
+            "english": "Feral Rage",
+            "chinese": ""
+        },
+        "card_art":"@ClassEvoker",
+        "rarity": "common",
+        "card_type": "junk",
+        "targets_room": true,
+        "targetless": true,
+        "cost": 1,
+        "triggers": ["@FeralRageReserve"]
+    }],
+    "card_triggers": [
+            {
+                "id": "FeralRageReserve",
+                "trigger": "on_unplayed_negative",
+                "descriptions": {
+                "english": "<b>Shifter</b> units on all floors gain [effect0.status0.power] [sap].",
+                 "effects": ["@FeralRageSap"]
+            }
+        }
+     ],
+    "effects": [{
+            "id": "FeralRageSap",
+            "name": "CardEffectAddStatusEffect",
+            "target_subtype": "@Sub_Shifter",
+            "target_team": "monsters",
+            "target_mode": "tower",
+            "param_status_effects": [{
+               "status": "debuff",
+               "count": 4
+            }]
+        }
+    ],
+    "sprites": [{
+        "id": "BackToBasicsArt",
+        "path": "textures/BackToBasics.png"
+    }],
+    "game_objects": [{
+        "id": "BackToBasicsArt",
+        "type": "card_art",
+        "extensions": {
+            "card_art": {
+                "sprite": "@BackToBasicsArt"
+            }
+        }
+    }]
+}

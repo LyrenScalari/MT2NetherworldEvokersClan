@@ -2,12 +2,12 @@
   "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
   "cards": [
     {
-      "id": "SpawnKitsune",
+      "id": "SpiritButterfly",
       "names": {
-        "english": "Kitsune Spirit",
+        "english": "Butterfly Spirit",
         "chinese": "模组锻造者"
       },
-      "card_art": "@Kitsune_Card",
+      "card_art": "@Butterfly_Card",
       "cost": 1,
       "card_type": "monster",
       "rarity": "common",
@@ -15,51 +15,44 @@
       "targets_room": true,
       "effects": [
         {
-          "id": "@SpawnKitsune"
+          "id": "@SpawnButterfly"
         }
       ],
       "lore_tooltips": [
         {
-          "english": "The most basic of netherworld spirits, its gnashing fangs burn the victims soul.",
+          "english": "Ethereal and pretty, these butterflies sap the souls of those they touch.",
           "chinese": ""
         }
-      ],
-      "pools": [
-        "UnitsAllBanner"
       ]
     }
   ],
   "characters": [
     {
-      "id": "Kitsune",
+      "id": "Butterfly",
       "size": 1,
       "attack_damage": 15,
-      "health": 10,
+      "health": 15,
       "names": {
-        "english": "Kitsune Spirit",
+        "english": "Butterfly Spirit",
         "chinese": "模组锻造者"
       },
-      "character_art": "@KitsuneChar_Art",
+      "character_art": "@ButterflyChar_Art",
       "subtypes": [
         "@Sub_Spirit"
       ],
       "triggers": [
         {
-          "id": "@KitsuneTrigger"
+          "id": "@ButterflyTrigger"
         }
       ],
     
     "starting_status_effects": [
             {
                 "status": "captured_soul",
-                "count": 3
+                "count": 2
             },
             {
                 "status": "@aetherial",
-                "count": 1
-            },
-            {
-                "status": "multistrike",
                 "count": 1
             }
         ]
@@ -67,59 +60,59 @@
   ],
   "character_triggers": [
     {
-      "id": "KitsuneTrigger",
+      "id": "ButterflyTrigger",
       "descriptions": {
-        "english": "Apply [effect0.status0.power] [sap] to the frontmost enemy unit.",
+        "english": "Apply [effect0.status0.power] <b>Soulburn</b> to the fronmost enemy unit.",
         "chinese": ""
       },
       "trigger": "on_turn_begin",
       "effects": [
         {
-          "id": "@CursedBite"
+          "id": "@PaleWind"
         }
       ]
     }
   ],
   "effects": [
     {
-      "id": "SpawnKitsune",
+      "id": "SpawnButterfly",
       "name": "CardEffectSpawnMonster",
       "target_mode": "room",
-      "param_character": "@Kitsune"
+      "param_character": "@Butterfly"
     },
     {
-      "id": "CursedBite",
+      "id": "PaleWind",
       "name": "CardEffectAddStatusEffect",
       "target_mode": "front_in_room",
       "target_team": "heroes",
       "param_status_effects": [{
-        "status": "debuff",
-        "count": 2
+        "status": "@soulburn",
+        "count": 5
       }]
     }
   ],
   "sprites": [
     {
-      "id": "Kitsune",
-      "path": "textures/Kitsune.png"
+      "id": "Butterfly",
+      "path": "textures/PurpleButterfly.png"
     }
   ],
   "game_objects": [
     {
-      "id": "Kitsune_Card",
+      "id": "Butterfly_Card",
       "type": "card_art",
       "extensions": {
         "card_art": {
-          "sprite": "@Kitsune"
+          "sprite": "@Butterfly"
         }
       }
     },
     {
-      "id": "KitsuneChar_Art",
+      "id": "ButterflyChar_Art",
       "type": "character_art",
       "extensions": {
         "character_art": {
-          "sprite": "@Kitsune"
+          "sprite": "@Butterfly"
         }
       }
     }

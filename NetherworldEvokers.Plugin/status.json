@@ -2,31 +2,31 @@
     "$schema": "https://raw.githubusercontent.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/refs/heads/main/schemas/base.json",
     "status_effects": [
     {
-      "id": "construct",
+      "id": "aetherial",
       "class_name": "@StatusEffectAetherialState",
       "names": {
         "english": "Aetherial",
-        "chinese": "构造体"
+        "chinese": ""
       },
       "stackable_names": {
         "english": "<nobr>Aetherial {0}</nobr>",
-        "chinese": "<nobr>构造体 {0}</nobr>"
+        "chinese": ""
       },
       "card_tooltips": {
-        "english": "After combat, loses 1 Soul then if this unit has no Souls it is Consumed.",
-        "chinese": "回合结束时，每有一层构造体，获得 +[codeint0][attack]和[health]。<br>层数会跨回合保留，但不会死后保留。"
+        "english": "After combat, loses 1 Soul then if this unit has no Souls it is Consumed triggering Etch.",
+        "chinese": ""
       },
       "character_tooltips": {
-        "english": "After combat, loses 1 Soul then if this unit has no Souls it is Consumed.",
-        "chinese": "回合结束时，获得 +[codeint0][attack]和[health]。<br>层数会跨回合保留，但不会死后保留。"
+        "english": "After combat, loses 1 Soul then if this unit has no Souls it is Consumed triggering Etch.",
+        "chinese": ""
       },
       "replacement_texts": {
-        "english": "<b>Construct</b>",
-        "chinese": "<b>构造体</b>"
+        "english": "<b>Aetherial</b>",
+        "chinese": ""
       },
       "notifications": {
-        "english": "Constructed",
-        "chinese": "构造完成"
+        "english": "Aetherial",
+        "chinese": ""
       },
       "display_category": "persistent",
       "trigger_stage": "on_post_room_combat",
@@ -35,18 +35,106 @@
       "exclude_hero_propagation": false,
       "param_int": 1,
       "icon": "@aetherial"
+    },
+    {
+      "id": "lunacy",
+      "class_name": "@StatusEffectLunacyState",
+      "names": {
+        "english": "Lunacy",
+        "chinese": ""
+      },
+      "stackable_names": {
+        "english": "<nobr>Lunacy {0}</nobr>",
+        "chinese": ""
+      },
+      "card_tooltips": {
+        "english": "During <b>Full Moon</b>, +[codeint0][attack] per stack.<br>Decreases after combat during New Moon.",
+        "chinese": ""
+      },
+      "character_tooltips": {
+        "english": "During <b>Full Moon</b>, +[codeint0][attack] (+[codeint1][attack] per stack). <br>Decreases after combat during New Moon.",
+        "chinese": ""
+      },
+      "replacement_texts": {
+        "english": "<b>Lunacy</b>",
+        "chinese": ""
+      },
+      "notifications": {
+        "english": "Lunacy",
+        "chinese": ""
+      },
+      "display_category": "positive",
+      "trigger_stage": "on_pre_character_trigger",
+      "is_stackable": true,
+      "is_propagatable": true,
+      "remove_when_triggered": true,
+      "exclude_hero_propagation": false,
+      "param_int": 4,
+      "icon": "@lunacy"
+    },
+    {
+      "id": "soulburn",
+      "class_name": "@StatusEffectSoulburnState",
+      "names": {
+        "english": "Soulburn",
+        "chinese": ""
+      },
+      "stackable_names": {
+        "english": "<nobr>Soulburn {0}</nobr>",
+        "chinese": ""
+      },
+      "card_tooltips": {
+        "english": "When gaining a Debuff Soulburn deals damage equal to stacks for each destinct debuff it has. <br>decreases upon activation.",
+        "chinese": ""
+      },
+      "character_tooltips": {
+        "english": "When this unit gains a Debuff it takes damage equal to Soulburn for each destinct debuff it has. <br>decreases upon activation.",
+        "chinese": ""
+      },
+      "replacement_texts": {
+        "english": "<b>Soulburn</b>",
+        "chinese": ""
+      },
+      "notifications": {
+        "english": "Soulburn",
+        "chinese": ""
+      },
+      "display_category": "negative",
+      "trigger_stage": "on_pre_character_trigger",
+      "is_stackable": true,
+      "is_propagatable": true,
+      "remove_when_triggered": true,
+      "exclude_hero_propagation": false,
+      "param_int": 1,
+      "icon": "@soulburn"
     }
   ],
   "sprites": [
     {
       "id": "aetherial",
       "path": "textures/aetherial_white.png"
+    },
+    {
+      "id": "lunacy",
+      "path": "textures/lunacy_white.png"
+    },
+    {
+      "id": "soulburn",
+      "path": "textures/soulburn_white.png"
     }
   ],
   "atlas_icons": [
     {
       "id": "aetherial",
       "path": "textures/aetherial_black.png"
+    },
+    {
+      "id": "lunacy",
+      "path": "textures/lunacy_black.png"
+    },
+    {
+      "id": "soulburn",
+      "path": "textures/soulburn_black.png"
     }
   ]
 }

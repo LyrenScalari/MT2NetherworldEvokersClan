@@ -21,6 +21,7 @@ using TrainworksReloaded.Core.Interfaces;
 using TrainworksReloaded.Core.Extensions;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using TrainworksReloaded.Base.Extensions;
 
 namespace NetherworldEvokers.Plugin
 {
@@ -32,7 +33,6 @@ namespace NetherworldEvokers.Plugin
         {
             // Plugin startup logic
             Logger = base.Logger;
-
             var builder = Railhead.GetBuilder();
             builder.Configure(
                 MyPluginInfo.PLUGIN_GUID,
@@ -42,13 +42,29 @@ namespace NetherworldEvokers.Plugin
                     // Be sure to update the project configuration if you include more folders
                     //   the project only copies json files in the json folder and not in subdirectories.
                     c.AddMergedJsonFile(
-                        "characters/character_kitsune_spirit.json"
+                        "champions/champion_silver.json",
+                        "characters/character_spirit_butterfly.json",
+                        "characters/character_kitsune_spirit.json",
+                        "characters/character_moonblighted_outcast.json",
+                        "cards/FeralRage.json",
+                        "plugin.json",
+                        "status.json"
                     );
                 }
             );
-
+            Railend.ConfigurePostAction(
+                c =>
+                {
+                    var manager = c.GetInstance<IRegister<CharacterTriggerData.Trigger>>();
+                    CharacterTriggerData.Trigger GetTrigger(string name, string mod_reference)
+                    {
+                        return manager.GetValueOrDefault(name.ToId(mod_reference, TemplateConstants.CharacterTriggerEnum));
+                    }
+                    Triggers.OnSoulburn = GetTrigger("@OnDebuffed", "Conductor");
+                }
+            );
             Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
-            
+
             // Uncomment if you need harmony patches, if you are writing your own custom effects.
             //var harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
             //harmony.PatchAll();
